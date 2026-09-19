@@ -51,7 +51,7 @@ jobs:
           cd twrp
           export ALLOW_MISSING_DEPENDENCIES=true
           source build/envsetup.sh
-          lunch twrp_xcover4s-eng
+          lunch omni_xcover4s-eng
           mka recoveryimage -j2
 
       - name: Upload recovery
