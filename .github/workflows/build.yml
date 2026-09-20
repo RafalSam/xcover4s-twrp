@@ -1,4 +1,3 @@
-```yaml
 name: Build TWRP
 
 on:
@@ -66,4 +65,3 @@ jobs:
         with:
           name: xcover4s-recovery
           path: twrp/out/target/product/xcover4s/recovery.img
-```
