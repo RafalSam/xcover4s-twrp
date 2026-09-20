@@ -60,7 +60,8 @@ jobs:
           echo "=== RECOVERY SIZE ==="
           stat -c%s out/target/product/xcover4s/recovery.img
           echo "=== AVB INFO ==="
-          avbtool info_image --image out/target/product/xcover4s/recovery.img
+          python3 external/avb/avbtool.py info_image \
+            --image out/target/product/xcover4s/recovery.img
 
       - name: Upload recovery
         uses: actions/upload-artifact@v4
