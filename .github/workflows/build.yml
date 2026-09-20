@@ -54,6 +54,14 @@ jobs:
           lunch twrp_xcover4s-eng
           mka recoveryimage -j2
 
+      - name: Check AVB
+        run: |
+          cd twrp
+          echo "=== RECOVERY SIZE ==="
+          stat -c%s out/target/product/xcover4s/recovery.img
+          echo "=== AVB INFO ==="
+          avbtool info_image --image out/target/product/xcover4s/recovery.img
+
       - name: Upload recovery
         uses: actions/upload-artifact@v4
         with:
