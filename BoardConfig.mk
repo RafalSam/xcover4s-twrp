@@ -1,17 +1,23 @@
-```make
 #
+
 # Copyright (C) 2024 The Android Open Source Project
+
 # Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
+
 #
+
 # SPDX-License-Identifier: Apache-2.0
+
 #
 
 DEVICE_PATH := device/samsung/xcover4s
 
 # For building with minimal manifest
+
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Architecture
+
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -27,16 +33,20 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
 # APEX
+
 OVERRIDE_TARGET_FLATTEN_APEX := true
 
 # Bootloader
+
 TARGET_BOOTLOADER_BOARD_NAME := exynos7884
 TARGET_NO_BOOTLOADER := true
 
 # Display
+
 TARGET_SCREEN_DENSITY := 320
 
 # Kernel
+
 BOARD_BOOTIMG_HEADER_VERSION := 1
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive androidboot.selinux=permissive
@@ -51,10 +61,12 @@ BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_SEPARATED_DTBO := true
 
 # Kernel
+
 TARGET_KERNEL_CONFIG := xcover4s_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/xcover4s
 
 # Kernel - prebuilt
+
 TARGET_FORCE_PREBUILT_KERNEL := true
 
 ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
@@ -64,6 +76,7 @@ BOARD_KERNEL_SEPARATED_DTBO :=
 endif
 
 # Partitions
+
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 55574528
@@ -76,17 +89,19 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Platform
+
 TARGET_BOARD_PLATFORM := universal7884
 
 # Recovery
+
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # TWRP Configuration
+
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
-```
