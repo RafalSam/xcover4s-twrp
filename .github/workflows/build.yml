@@ -1,3 +1,4 @@
+```yaml
 name: Build TWRP
 
 on:
@@ -59,12 +60,10 @@ jobs:
           cd twrp
           echo "=== RECOVERY SIZE ==="
           stat -c%s out/target/product/xcover4s/recovery.img
-          echo "=== AVB INFO ==="
-          python3 external/avb/avbtool.py info_image \
-            --image out/target/product/xcover4s/recovery.img
 
       - name: Upload recovery
         uses: actions/upload-artifact@v4
         with:
           name: xcover4s-recovery
           path: twrp/out/target/product/xcover4s/recovery.img
+```
